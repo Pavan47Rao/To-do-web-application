@@ -32,7 +32,7 @@ export class TodoService {
 /**
    * Creates new todo.
    *
-   * @param  {Todo} sticky: Sticky {new todo object}
+   * @param  {Todo} todo: Sticky {new todo object}
    * @return {Observable<Todo>} {Observable for saved todo object}
 */ 
   createTodo(toDo: Todo = null): Observable<Todo> {
@@ -42,9 +42,9 @@ export class TodoService {
   }
 
   /**
-   * Update a todo.
+   * Updates a todo.
    *
-   * @param  {Todo} sticky: Sticky {new todo object}
+   * @param  {Todo} todo: Todo {new todo object}
    * @return {Observable<Todo>} {Observable for saved todo object}
   */ 
   updateTodo(toDo: Todo): Observable<Todo> {
@@ -53,6 +53,12 @@ export class TodoService {
     return this.http.put<Todo>(this.todoURL+"/"+toDo.id, newTodo);
   }
 
+/**
+   * Deletes a todo.
+   *
+   * @param  {string} id: string {id of the todo object}
+   * @return {Observable<{}>} {Observable for deleted todo object}
+  */ 
   deleteTodo(id: string): Observable<{}> {
     let url = this.todoURL+"/"+id;
     return this.http.delete(url);

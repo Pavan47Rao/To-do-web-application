@@ -1,10 +1,15 @@
 <p>todo-list works!</p>
+<button (click)="createTodo()"> Create </button>
+
+
 <div *ngFor="let todo of todoList">
 
     <div>
         <div>{{todo.title}}</div>
         <div>{{todo.dueDate}}</div>
         <button (click)="openTodoDetail(todo)"> View Details </button>
+        <button (click)="updateTodoDetails(todo)"> Update </button>
+        <button (click)="deleteTodo(todo.id)"> Delete </button>
     </div>
 
 </div>

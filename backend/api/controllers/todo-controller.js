@@ -30,6 +30,7 @@ exports.list = function (request, response) {
  * @param {response} {HTTP response object}
  */
 exports.post = function (request, response) {
+    console.log(request.body);
     const newToDo = Object.assign({}, request.body);
     const resolve = (todo) => {
         response.status(200);
@@ -64,6 +65,7 @@ exports.get = function (request, response) {
  */
 exports.put = function (request, response) {
     const todo = Object.assign({}, request.body);
+    console.log(request.body);
     const resolve = (todo) => {
         response.status(200);
         response.json(todo);

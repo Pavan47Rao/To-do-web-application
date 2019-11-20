@@ -20,8 +20,8 @@ let ToDoSchema = new Schema({
         required: "title is required"
     },
     completed: {
-        type: Boolean,
-        default: false
+        type: String,
+        default: "false"
     },
     dueDate: {
         type: Date

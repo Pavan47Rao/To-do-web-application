@@ -4,10 +4,10 @@ import { Todo } from "../model/todo";
 
 @Component({
   selector: 'app-todo-detail',
-  templateUrl: './todo-detail.component.html',
-  styleUrls: ['./todo-detail.component.scss']
+  templateUrl: './todo-detail-view.component.html',
+  styleUrls: ['./todo-detail-view.component.scss']
 })
-export class TodoDetailComponent implements OnInit {
+export class TodoDetailViewComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: Todo) { }
 

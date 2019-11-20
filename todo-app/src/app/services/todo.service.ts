@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class TodoService {
   todo: string;
   todoURL: string;
+  create: boolean=false;
 
   /**
    * Constructor
@@ -36,7 +37,24 @@ export class TodoService {
 */ 
   createTodo(toDo: Todo = null): Observable<Todo> {
     let newTodo: Todo;
-    newTodo = toDo ? toDo : new Todo("","",false,new Date());
+    newTodo = toDo ? toDo : new Todo("","","false",new Date(),"");
     return this.http.post<Todo>(this.todoURL, newTodo);
+  }
+
+  /**
+   * Update a todo.
+   *
+   * @param  {Todo} sticky: Sticky {new todo object}
+   * @return {Observable<Todo>} {Observable for saved todo object}
+  */ 
+  updateTodo(toDo: Todo): Observable<Todo> {
+    let newTodo: Todo;
+    newTodo = toDo ? toDo : new Todo("","","false",new Date(),"");
+    return this.http.put<Todo>(this.todoURL+"/"+toDo.id, newTodo);
+  }
+
+  deleteTodo(id: string): Observable<{}> {
+    let url = this.todoURL+"/"+id;
+    return this.http.delete(url);
   }
 }

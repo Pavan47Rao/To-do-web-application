@@ -23,6 +23,7 @@ app.use(bodyParser.json()); //body parser is an existing middleware function
 app.use(function (req, res, next) { //next is a function that calls next middleware function;
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     next();
 });
 

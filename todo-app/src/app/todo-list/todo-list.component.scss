@@ -1,0 +1,55 @@
+.todo-page{
+    height: 90%;
+    width: 93%;
+    background-color: antiquewhite;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+.header {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.todo-item {
+    background-color: burlywood;
+    margin-top: 2%;
+    height: 60px;
+    padding-top: 2%;
+}
+
+.key1 {
+    padding-left: 2%;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: brown;
+}
+
+.key2 {
+    padding-left: 4%;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: brown;
+}
+
+.buttons {
+    margin-left: 30%;
+}
+
+.button {
+    font-size: large;
+    cursor: pointer;
+}
+
+.button-1, .button-2 {
+    padding-right: 1%;
+}
+
+.value {
+    padding-left: 1%;
+}
+
+.btn-new {
+    padding-left: 2%;
+}

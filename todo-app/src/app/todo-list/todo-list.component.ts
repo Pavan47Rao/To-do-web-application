@@ -42,9 +42,9 @@ export class TodoListComponent implements OnInit {
   openTodoDetail(todo:any) {
     console.log(todo);
     let dialogRef = this.dialog.open(TodoDetailViewComponent, {
-        // panelClass: 'todoModal',
+        // panelClass: 'todo-modal',
         height: '200px',
-        width: '200px',
+        width: '500px',
         data: { 
           title:todo.title,
           description:todo.description,

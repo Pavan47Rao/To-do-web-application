@@ -1,1 +1,13 @@
 <p>todo-list works!</p>
+<div *ngFor="let todo of todoList">
+
+    <div>
+        <div>{{todo.title}}</div>
+        <div>{{todo.dueDate}}</div>
+        <button (click)="openTodoDetail(todo)"> View Details </button>
+    </div>
+
+</div>
+
+<!--       <div *ngFor="let item of exportService.list; let position = index;">
+ -->

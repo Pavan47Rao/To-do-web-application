@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
+import { Todo } from "../model/todo";
 
 @Component({
   selector: 'app-todo-detail',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Todo) { }
 
   ngOnInit() {
+    console.log(this.data);
   }
 
 }

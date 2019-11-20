@@ -1,12 +1,12 @@
 export class Todo {
-    title: string;
-    description: string;
-    completed: boolean;
-    dueDate: Date;
+    Title: string;
+    Description: string;
+    Completed: boolean;
+    DueDate: Date;
     constructor(title: string, description: string, completed: boolean, dueDate: Date) {
-        this.title = title;
-        this.description = description;
-        this.completed = completed;
-        this.dueDate = new Date();
+        this.Title = title;
+        this.Description = description;
+        this.Completed = completed;
+        this.DueDate = new Date();
     }
 }

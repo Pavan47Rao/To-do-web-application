@@ -54,7 +54,10 @@
     padding-left: 2%;
 }
 
-.todo-modal{
-    height: '200px';
-    width: '700px';
+.items {
+    overflow-y: scroll;
+}
+
+.top-bar {
+    position: sticky;
 }

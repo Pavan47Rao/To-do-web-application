@@ -1,32 +1,42 @@
 <div class="detail-edit">
+<div *ngIf="!data.create" class="header"> Update your to-do</div>
+<div *ngIf="data.create" class="header"> Create your to-do</div>
 <form [formGroup]="toDoGroup">
     <div class="fields">
-        <mat-form-field>
-            Title:
-            <input matInput required formControlName="title" [(ngModel)]="data.title" >
-        </mat-form-field>
-
-        <mat-form-field>
-            Description:
-            <input matInput formControlName="description" [(ngModel)]="data.description" >
-        </mat-form-field>
-
-        <mat-form-field>
-            Due Date:
-            <input matInput required formControlName="dueDate" [(ngModel)]="data.dueDate" >
-        </mat-form-field>
-
-        <mat-form-field>
-            Completed:
-            <input matInput required formControlName="completed" [(ngModel)]="data.completed" >
-        </mat-form-field>
-
-        <div *ngIf="!data.create">
-            <button mat-stroked-button (click)="saveTodo()">Save</button>
+        <div class="detail">
+            <mat-form-field>
+                <span class="key">Title:</span>
+                <span class="value value-1"><input class="input" matInput required formControlName="title" [(ngModel)]="data.title" ></span>
+            </mat-form-field>
         </div>
 
-        <div *ngIf="data.create">
-            <button mat-stroked-button (click)="createTodo()">Add</button>
+        <div class="detail">
+            <mat-form-field>
+                <span class="key">Description:</span>
+                <span class="value value-2"><input class="input" matInput formControlName="description" [(ngModel)]="data.description" ></span>
+            </mat-form-field>
+        </div>
+
+        <div class="detail">
+            <mat-form-field>
+                <span class="key"> Date:</span>
+                <span class="value value-3"><input class="input" matInput required formControlName="dueDate" [(ngModel)]="data.dueDate" ></span>
+            </mat-form-field>
+        </div>
+
+        <div class="detail">
+            <mat-form-field>
+                <span class="key"> Completed:</span>
+                <span class="value value-4"><input matInput class="input" required formControlName="completed" [(ngModel)]="data.completed" ></span>
+            </mat-form-field>
+        </div>
+
+        <div class="button" *ngIf="!data.create">
+            <button class="add" mat-stroked-button (click)="saveTodo()">Save</button>
+        </div>
+
+        <div class="button" *ngIf="data.create">
+            <button class="add" mat-stroked-button (click)="createTodo()">Add</button>
         </div>
 
     </div>

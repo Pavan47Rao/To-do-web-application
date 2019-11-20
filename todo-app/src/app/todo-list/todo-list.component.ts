@@ -42,7 +42,6 @@ export class TodoListComponent implements OnInit {
   openTodoDetail(todo:any) {
     console.log(todo);
     let dialogRef = this.dialog.open(TodoDetailViewComponent, {
-        // panelClass: 'todo-modal',
         height: '200px',
         width: '500px',
         data: { 
@@ -56,9 +55,8 @@ export class TodoListComponent implements OnInit {
 
   updateTodoDetails(todo) {
     let dialogRef = this.dialog.open(TodoDetailEditComponent, {
-      // panelClass: 'todoModal',
-      height: '500px',
-      width: '400px',
+      height: '240px',
+      width: '500px',
       data: { 
         create: false,
         title:todo.title,
@@ -77,8 +75,8 @@ export class TodoListComponent implements OnInit {
     this.todoService.create=true;
     let dialogRef = this.dialog.open(TodoDetailEditComponent, {
       // panelClass: 'todoModal',
-      height: '500px',
-      width: '400px',
+      height: '240px',
+      width: '500px',
       data: { 
         create: true,
         title:"",

@@ -2,26 +2,25 @@
 <div class="todo-page">
 
     <div class="top-bar">
-    <div class="header">YOUR TO-DO LIST</div>
-
-    <div class="btn-new"> <button class="button" (click)="createTodo()"> NEW </button> </div>
+        <div class="header">YOUR TO-DO LIST</div>
+        <div class="btn-new"> <button class="button" (click)="createTodo()"> NEW </button> </div>
     </div>
 
     <div class="items">
-    <div *ngFor="let todo of todoList">
-        
-        <div class="todo-item" [id]="'id-'+todo.title">
-            <span class="key1">Title:</span> <span class="value">{{todo.title}}</span>
-            <span class="key2">Due Date:</span> <span class="value">{{todo.dueDate}}</span>
-            <span class="buttons">
-                <span class="button-4"><button [id]="'button-'+todo.title" [disabled]="todo.completed=='yes'" class="button btn-completed" (click)="completeTodo(todo)"> COMPLETE </button></span>
-                <span class="button-1"><button class="button btn-view" (click)="openTodoDetail(todo)"> VIEW DETAILS </button></span>
-                <span class="button-2"><button class="button btn-update" (click)="updateTodoDetails(todo)"> UPDATE </button></span>
-                <span class="button-3"><button class="button btn-delete" (click)="deleteTodo(todo.id)"> DELETE </button></span>
-            </span>
+        <div *ngFor="let todo of todoList">
+            
+            <div [className]="todo.completed=='yes' ? 'todo-item complete' : 'todo-item'" class="todo-item" [id]="'id-'+todo.title">
+                <span class="key1">Title:</span> <span class="value">{{todo.title}}</span>
+                <span class="key2">Due Date:</span> <span class="value">{{todo.dueDate}}</span>
+                <span class="buttons">
+                    <span class="button-4"><button [id]="'button-'+todo.title" [disabled]="todo.completed=='yes'" class="button btn-completed" (click)="completeTodo(todo)"> COMPLETE </button></span>
+                    <span class="button-1"><button class="button btn-view" (click)="openTodoDetail(todo)"> VIEW DETAILS </button></span>
+                    <span class="button-2"><button class="button btn-update" (click)="updateTodoDetails(todo)"> UPDATE </button></span>
+                    <span class="button-3"><button class="button btn-delete" (click)="deleteTodo(todo.id)"> DELETE </button></span>
+                </span>
+            </div>
+            
         </div>
-        
-    </div>
     </div>
     
 </div>

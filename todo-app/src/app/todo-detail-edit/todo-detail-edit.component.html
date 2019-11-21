@@ -1,7 +1,7 @@
 <div class="detail-edit">
 <div *ngIf="!data.create" class="header"> Update your to-do</div>
 <div *ngIf="data.create" class="header"> Create your to-do</div>
-<form [formGroup]="toDoGroup">
+<form [formGroup]="toDoGroup" ngNativeValidate>
     <div class="fields">
         <div class="detail">
             <mat-form-field>
@@ -20,7 +20,7 @@
         <div class="detail">
             <mat-form-field>
                 <span class="key"> Date:</span>
-                <span class="value value-3"><input class="input" matInput required formControlName="dueDate" [(ngModel)]="data.dueDate" ></span>
+                <span class="value value-3"><input class="input" placeholder="mm-dd-yyyy" matInput required formControlName="dueDate" [(ngModel)]="data.dueDate" ></span>
             </mat-form-field>
         </div>
 

@@ -4,12 +4,14 @@
     background-color: antiquewhite;
     margin-left: 3%;
     margin-top: 3%;
+    overflow-y: scroll;
 }
 
 .header {
     text-align: center;
     font-size: xx-large;
-    font-weight: bolder;
+    font-weight: bolder;    
+    padding-top: 3%;
 }
 
 .todo-item {
@@ -59,7 +61,9 @@
 }
 
 .top-bar {
+    background-color: antiquewhite;
     position: sticky;
+    top: 0;
 }
 
 .complete{

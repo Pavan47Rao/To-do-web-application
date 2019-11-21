@@ -37,7 +37,7 @@ export class TodoService {
 */ 
   createTodo(toDo: Todo = null): Observable<Todo> {
     let newTodo: Todo;
-    newTodo = toDo ? toDo : new Todo("","","false",new Date(),"");
+    newTodo = toDo ? toDo : new Todo("","","no",new Date(),"");
     return this.http.post<Todo>(this.todoURL, newTodo);
   }
 
@@ -49,7 +49,7 @@ export class TodoService {
   */ 
   updateTodo(toDo: Todo): Observable<Todo> {
     let newTodo: Todo;
-    newTodo = toDo ? toDo : new Todo("","","false",new Date(),"");
+    newTodo = toDo ? toDo : new Todo("","","no",new Date(),"");
     return this.http.put<Todo>(this.todoURL+"/"+toDo.id, newTodo);
   }
 

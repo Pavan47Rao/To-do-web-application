@@ -82,7 +82,7 @@ export class TodoListComponent implements OnInit {
         title:"",
         description:"",
         dueDate:"",
-        completed:""    
+        completed:"no"    
       }
     });
     dialogRef.afterClosed().subscribe(result => {
@@ -90,4 +90,11 @@ export class TodoListComponent implements OnInit {
     })
   }
 
+  completeTodo(todo: Todo) {
+    todo.completed = "yes";
+    let ele1 = <HTMLInputElement> document.getElementById("id-"+todo.title);
+    ele1.classList.add('complete');
+    let ele2 = <HTMLInputElement> document.getElementById("button-"+todo.title);
+    ele2.disabled = true;
+  }
 }

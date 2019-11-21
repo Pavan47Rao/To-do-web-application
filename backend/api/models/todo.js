@@ -21,10 +21,11 @@ let ToDoSchema = new Schema({
     },
     completed: {
         type: String,
-        default: "false"
+        default: "no"
     },
     dueDate: {
-        type: Date
+        type: Date,
+        required: "due date is required"
     }
 }, {
     /**

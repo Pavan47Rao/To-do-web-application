@@ -13,7 +13,7 @@
 }
 
 .todo-item {
-    background-color: burlywood;
+    background-color: lightpink;
     margin-top: 2%;
     height: 60px;
     padding-top: 2%;
@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-.button-1, .button-2 {
+.button-4, .button-1, .button-2 {
     padding-right: 1%;
 }
 
@@ -60,4 +60,8 @@
 
 .top-bar {
     position: sticky;
+}
+
+.complete{
+    background-color: lightgreen;
 }

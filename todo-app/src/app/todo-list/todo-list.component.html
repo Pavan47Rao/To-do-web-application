@@ -11,7 +11,7 @@
             
             <div [className]="todo.completed=='yes' ? 'todo-item complete' : 'todo-item'" class="todo-item" [id]="'id-'+todo.title">
                 <span class="key1">Title:</span> <span class="value">{{todo.title}}</span>
-                <span class="key2">Due Date:</span> <span class="value">{{todo.dueDate}}</span>
+                <span class="key2">Due Date:</span> <span class="value">{{todo.dueDate | date:'short'}}</span>
                 <span class="buttons">
                     <span class="button-4"><button [id]="'button-'+todo.title" [disabled]="todo.completed=='yes'" class="button btn-completed" (click)="completeTodo(todo)"> COMPLETE </button></span>
                     <span class="button-1"><button class="button btn-view" (click)="openTodoDetail(todo)"> VIEW DETAILS </button></span>

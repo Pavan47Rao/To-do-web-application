@@ -1,12 +1,12 @@
 <div class="detail-edit">
 <div *ngIf="!data.create" class="header"> Update your to-do</div>
 <div *ngIf="data.create" class="header"> Create your to-do</div>
-<form [formGroup]="toDoGroup" ngNativeValidate>
+<form [formGroup]="toDoGroup">
     <div class="fields">
         <div class="detail">
             <mat-form-field>
                 <span class="key">Title:</span>
-                <span class="value value-1"><input class="input" matInput required formControlName="title" [(ngModel)]="data.title" ></span>
+                <span class="value value-1"><input matInput class="input" formControlName="title" [(ngModel)]="data.title" ></span>
             </mat-form-field>
         </div>
 
@@ -20,7 +20,8 @@
         <div class="detail">
             <mat-form-field>
                 <span class="key"> Date:</span>
-                <span class="value value-3"><input class="input" placeholder="mm-dd-yyyy" matInput required formControlName="dueDate" [(ngModel)]="data.dueDate" ></span>
+                <span *ngIf="data.create" class="value value-3"><input class="input" placeholder="mm-dd-yyyy, hh:mm AM/PM" matInput required formControlName="dueDate"></span>
+                <span *ngIf="!data.create" class="value value-3"><input class="input" matInput formControlName="dueDate" [ngModel]="data.dueDate | date:'short'" (ngModelChange)="data.dueDate=$event"></span>
             </mat-form-field>
         </div>
 

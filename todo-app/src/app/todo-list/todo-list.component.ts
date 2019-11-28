@@ -96,5 +96,9 @@ export class TodoListComponent implements OnInit {
     ele1.classList.add('complete');
     let ele2 = <HTMLInputElement> document.getElementById("button-"+todo.title);
     ele2.disabled = true;
+    this.todoService.updateTodo(todo).subscribe((response) => {
+      //do something with the response
+      console.log("Response is: ", response);
+   });
   }
 }
